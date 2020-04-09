@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>COVID-19 Statistics</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+
+<body>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="index.html" class="brand-logo">COVID-19 Info App</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="statistics.html">Statistics</a></li>
+                <li><a href="testLocations.html">Test Locations</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <!-- Card -->
+        <div class="col s12 m3 l3 cardContainer">
+            <h4 class="header">Choose a location</h4>
+            <div class="card horizontal">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>This can be your location, the location of a friend or family member, or anywhere else in the
+                            world!</p>
+                    </div>
+                    <div class="card-action">
+                        <!-- Small modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target=".bd-example-modal-sm">Choose your
+                            location</button>
+                        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+                            aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                    <form class="form-inline">
+                                        <div class="form-group mb-2">
+                                            <label for="staticEmail2" class="sr-only">Enter a zip code</label>
+                                            <input type="text" readonly class="form-control-plaintext" id="staticEmail2"
+                                                value="email@example.com">
+                                        </div>
+                                        <div class="form-group mx-sm-3 mb-2">
+                                            <label for="inputPassword2" class="sr-only">90210</label>
+                                            <input type="password" class="form-control" id="inputPassword2"
+                                                placeholder="Password">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary mb-2">See statistics</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m9 l9">
+                <h4 class="header">World Statistics</h4>
+                <div class="card horizontal">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Placeholder text, we'll build some stuff out here. Graphs, stats, and all types of shit,
+                                yo.</p>
+                        </div>
+
+
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Country</th>
+                                    <th>Confirmed</th>
+                                    <th>Recovered</th>
+                                    <th>Deaths</th>
+                                    <th>Population</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>x</td>
+                                    <td>x</td>
+                                    <td>x</td>
+                                    <td>x</td>
+                                    <td>x</td>
+                                </tr>
+                                <tr>
+                                    <td>x</td>
+                                    <td>x</td>
+                                    <td>x</td>
+                                    <td>x</td>
+                                    <td>x</td>
+                                </tr>
+                                <tr>
+                                    <td>x</td>
+                                    <td>x</td>
+                                    <td>x</td>
+                                    <td>x</td>
+                                    <td>x</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="page-footer brown">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Company Bio</h5>
+                    <p class="grey-text text-lighten-4">We are a small group of aspiring web developers working on our
+                        first
+                        project. We hope to not only make something functional, but something relevant and helpful to
+                        the community.
+                    </p>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Placeholder</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Placeholder</h5>
+                    <ul>
+                        <li><a class="white-text" href="#!">Link 1</a></li>
+                        <li><a class="white-text" href="#!">Link 2</a></li>
+                        <li><a class="white-text" href="#!">Link 3</a></li>
+                        <li><a class="white-text" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+</body>
+
+</html>
