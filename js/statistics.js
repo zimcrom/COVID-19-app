@@ -1,27 +1,12 @@
 //STATISTICS TAB HTML PSEUDO
 // in statistics tab once clicked will be taken to statistics html (Completed)
-// On load,
+// Create var for each country we want in the statistics table
 var countries = ['united-states', 'italy', 'spain', 'germany', 'china']
-var countryStatus = ['confirmed', 'active', 'deaths', 'recovered']
-
-for (var i = 0; i < countries.length; i++) {
-    console.log(countries[i]);
-}
-
-for (var j = 0; j < countryStatus.length; j++) {
-    console.log(countryStatus[j]);
-}
-
+// On load start this function
 function initStatPage() {
-    // Create var for array of objects in countries:
-
-    //Create a var that will go into countries array and get the countries names
-
-    // Create a var that will go into countries array and get the status
-    // Create for loop that will grab every name of the countries and append it
-    // for (var i = 0; i < countryName.length; i++) {
-
-    // }
+    //Create var for each different ajax call URL. Making the call separately ensures that the computer does'nt get overloaded with a bunch of ajax calls.
+    //IMPORTANT!!! USING THIS URL OF https://api.covid19api.com/total/country/ AND COUNTRY IS SO VAGUE THAT ITS RESPONSE GIVES US ALL THE STATUS NUMBERS UNFORTUNATELY FOR EACH COUNTRY IT GIVES 80+ RESPONSES BECAUSE ITS BROKEN DOWN BY TIME FOR EXAMPLE:
+    // WHEN WE CALL FOR THE USA URL ITS GONNA GIVE US ALL THE STATUS CASES ON JANUARY 1-31 AND FEBRUARY 1-28 AND SO ON AND SO FORTH AND THATS TOO MANY RESPONSES FOR THE COMPUTER TO HANDLE BECAUSE WE NEED TO DO IT FOR EACH COUNTRY
     var ajax1 = $.ajax({
         url: 'https://api.covid19api.com/total/country/' + countries[0],
         method: 'GET'
@@ -46,31 +31,30 @@ function initStatPage() {
         url: 'https://api.covid19api.com/total/country/' + countries[4],
         method: 'GET'
     });
-
+    // To fix the problem we kept getting of having too many responses what i did in the console.log was instead of saying give me all the responses, I told the computer to get the response but only give me the last index which will always be the current date data for each country.
     ajax1.then(function (response) {
-        console.log(response);
+        console.log(response[response.length - 1]);
     });
 
     ajax2.then(function (response) {
-        console.log(response);
+        console.log(response[response.length - 1]);
+    });
+
+    ajax3.then(function (response) {
+        console.log(response[response.length - 1]);
+    });
+
+    ajax4.then(function (response) {
+        console.log(response[response.length - 1]);
+    });
+
+    ajax5.then(function (response) {
+        console.log(response[response.length - 1]);
     });
 }
 
 initStatPage();
-// var url = "https://api.covid19api.com/total/country/" + countryName;
 
-    // // grab world info by country total API endpoint
-    //     var settings2 = {
-    //       "url": "https://api.covid19api.com/total/country/" + countryName[i] + "/status/" + status[i] ,
-    //       "method": "GET",
-    //       "timeout": 0,
-    //     };
-
-    //     $.ajax(settings2).done(function (response) {
-    //       console.log(response);
-    //     });
-
-        //$('<tr1>).append('<td>').text(response)
     // print to 'World Statistics' Table
 // On click "choose your location button"
 // modal pop up with zip code input form"
