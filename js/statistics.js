@@ -33,23 +33,41 @@ function initStatPage() {
     });
     // To fix the problem we kept getting of having too many responses what i did in the console.log was instead of saying give me all the responses, I told the computer to get the response but only give me the last index which will always be the current date data for each country.
     ajax1.then(function (response) {
+        // this console.log will give us the last index in the array
         console.log(response[response.length - 1]);
+        //give that response a variable so we can access that later and easier
+        var usaLast = response[response.length - 1];
+        // this console is the same as the last but a lot cleaner BEFORE SUBMITTING DELETE THE OTHER CONSOLE.LOG
+        console.log(usaLast);
+        var tableRow = $('<tbody>').append('<tr>');
+        var tableDataCountry = $(tableRow).append('<td>').text(usaLast.Country);
+        var tableDataConfirmed = $(tableRow).append('<td>').text(usaLast.Confirmed);
+        var tableDataDeaths = $(tableRow).append('<td>').text(usaLast.Deaths);
+        var tableDataRecovered = $(tableRow).append('<td>').text(usaLast.Recovered);
+
+        tableRow.append(tableDataCountry, tableDataConfirmed, tableDataDeaths, tableDataRecovered);
+        $('#tableData').append(tableRow);
+
     });
 
     ajax2.then(function (response) {
-        console.log(response[response.length - 1]);
+        var italyLast = response[response.length - 1];
+        console.log(italyLast);
     });
 
     ajax3.then(function (response) {
-        console.log(response[response.length - 1]);
+        var spainLast = response[response.length - 1];
+        console.log(spainLast);
     });
 
     ajax4.then(function (response) {
-        console.log(response[response.length - 1]);
+        var germanyLast = response[response.length - 1];
+        console.log(germanyLast);
     });
 
     ajax5.then(function (response) {
-        console.log(response[response.length - 1]);
+        var chinaLast = response[response.length - 1];
+        console.log(chinaLast);
     });
 }
 
@@ -69,5 +87,3 @@ initStatPage();
     // applicationCache.gooele.https + county + apikey
 
 
-    // var tableRow = $('<tbody>').append('<tr>');
-        // var tableData = $(tableRow).append('<td>').text(countryName[i]);
