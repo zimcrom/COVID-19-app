@@ -116,7 +116,6 @@ function initStatPage() {
 
 initStatPage();
 
-    // print to 'World Statistics' Table
 // On click "choose your location button"
 // modal pop up with zip code input form"
     // After zip code input after click modal pop up goes away and zip code is passed in a var for google places api
