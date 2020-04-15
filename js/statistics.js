@@ -4,11 +4,7 @@
 var countries = ['united-states', 'italy', 'spain', 'germany', 'china']
 // On load start this function
 function initStatPage() {
-<<<<<<< HEAD
     //Create var for each different ajax call URL. Making the call separately ensures that the computer doesn't get overloaded with a bunch of ajax calls.
-=======
-    //Create var for each different ajax call URL. Making the call separately ensures that the computer does'nt get overloaded with a bunch of ajax calls.
->>>>>>> master
     //IMPORTANT!!! USING THIS URL OF https://api.covid19api.com/total/country/ AND COUNTRY IS SO VAGUE THAT ITS RESPONSE GIVES US ALL THE STATUS NUMBERS UNFORTUNATELY FOR EACH COUNTRY IT GIVES 80+ RESPONSES BECAUSE ITS BROKEN DOWN BY TIME FOR EXAMPLE:
     // WHEN WE CALL FOR THE USA URL ITS GONNA GIVE US ALL THE STATUS CASES ON JANUARY 1-31 AND FEBRUARY 1-28 AND SO ON AND SO FORTH AND THATS TOO MANY RESPONSES FOR THE COMPUTER TO HANDLE BECAUSE WE NEED TO DO IT FOR EACH COUNTRY
     var ajax1 = $.ajax({
@@ -38,16 +34,13 @@ function initStatPage() {
     // To fix the problem we kept getting of having too many responses what i did in the console.log was instead of saying give me all the responses, I told the computer to get the response but only give me the last index which will always be the current date data for each country.
     ajax1.then(function (response) {
         // this console.log will give us the last index in the array
-<<<<<<< HEAD
-        // console.log(response[response.length - 1]);
-=======
+
         console.log(response[response.length - 1]);
->>>>>>> master
+
         //give that response a variable so we can access that later and easier
         var usaLast = response[response.length - 1];
         // this console is the same as the last but a lot cleaner BEFORE SUBMITTING DELETE THE OTHER CONSOLE.LOG
         console.log(usaLast);
-<<<<<<< HEAD
         var tableRow = $('<tr>');
         tableRow.addClass('usa-data');
         var tableDataCountry = $('<td>').text(usaLast.Country);
@@ -57,17 +50,6 @@ function initStatPage() {
         var tableDataRecovered = $('<td>').text(usaLast.Recovered);
         $('#table-body').append(tableRow);
         tableRow.append(tableDataCountry, tableDataDate, tableDataConfirmed, tableDataDeaths, tableDataRecovered);
-=======
-        var tableRow = $('<tbody>').append('<tr>');
-        var tableDataCountry = $(tableRow).append('<td>').text(usaLast.Country);
-        var tableDataConfirmed = $(tableRow).append('<td>').text(usaLast.Confirmed);
-        var tableDataDeaths = $(tableRow).append('<td>').text(usaLast.Deaths);
-        var tableDataRecovered = $(tableRow).append('<td>').text(usaLast.Recovered);
-
-        tableRow.append(tableDataCountry, tableDataConfirmed, tableDataDeaths, tableDataRecovered);
-        $('#tableData').append(tableRow);
-
->>>>>>> master
     });
 
     ajax2.then(function (response) {
