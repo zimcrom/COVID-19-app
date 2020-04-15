@@ -33,43 +33,84 @@ function initStatPage() {
     });
     // To fix the problem we kept getting of having too many responses what i did in the console.log was instead of saying give me all the responses, I told the computer to get the response but only give me the last index which will always be the current date data for each country.
     ajax1.then(function (response) {
-        // this console.log will give us the last index in the array
-
-        console.log(response[response.length - 1]);
-
         //give that response a variable so we can access that later and easier
         var usaLast = response[response.length - 1];
-        // this console is the same as the last but a lot cleaner BEFORE SUBMITTING DELETE THE OTHER CONSOLE.LOG
+        //console log last index from the response
         console.log(usaLast);
+        // create var that will create a table row
         var tableRow = $('<tr>');
+        // give table row a class
         tableRow.addClass('usa-data');
+        // create var that will put a <td> with the text of Country Name
         var tableDataCountry = $('<td>').text(usaLast.Country);
+        // create var that will put a <td> with the text of Date formatted to moment js
         var tableDataDate = $('<td>').text(moment(usaLast.Date).format("dddd, MMMM Do YYYY"));
+        // create var that will put a <td> with the text of confirmed cases
         var tableDataConfirmed = $('<td>').text(usaLast.Confirmed);
+        // create var that will put a <td> with the text of deaths
         var tableDataDeaths = $('<td>').text(usaLast.Deaths);
+        // create var that will put a <td> with the text of recovered
         var tableDataRecovered = $('<td>').text(usaLast.Recovered);
+        // inside of id table-body append the var tableRow
         $('#table-body').append(tableRow);
+        // inside of tableRow create all variables
         tableRow.append(tableDataCountry, tableDataDate, tableDataConfirmed, tableDataDeaths, tableDataRecovered);
     });
 
     ajax2.then(function (response) {
         var italyLast = response[response.length - 1];
         console.log(italyLast);
+        var tableRow = $('<tr>');
+        tableRow.addClass('italy-data');
+        var tableDataCountry = $('<td>').text(italyLast.Country);
+        var tableDataDate = $('<td>').text(moment(italyLast.Date).format("dddd, MMMM Do YYYY"));
+        var tableDataConfirmed = $('<td>').text(italyLast.Confirmed);
+        var tableDataDeaths = $('<td>').text(italyLast.Deaths);
+        var tableDataRecovered = $('<td>').text(italyLast.Recovered);
+        $('#table-body').append(tableRow);
+        tableRow.append(tableDataCountry, tableDataDate, tableDataConfirmed, tableDataDeaths, tableDataRecovered);
     });
 
     ajax3.then(function (response) {
         var spainLast = response[response.length - 1];
         console.log(spainLast);
+        var tableRow = $('<tr>');
+        tableRow.addClass('spain-data');
+        var tableDataCountry = $('<td>').text(spainLast.Country);
+        var tableDataDate = $('<td>').text(moment(spainLast.Date).format("dddd, MMMM Do YYYY"));
+        var tableDataConfirmed = $('<td>').text(spainLast.Confirmed);
+        var tableDataDeaths = $('<td>').text(spainLast.Deaths);
+        var tableDataRecovered = $('<td>').text(spainLast.Recovered);
+        $('#table-body').append(tableRow);
+        tableRow.append(tableDataCountry, tableDataDate, tableDataConfirmed, tableDataDeaths, tableDataRecovered);
     });
 
     ajax4.then(function (response) {
         var germanyLast = response[response.length - 1];
         console.log(germanyLast);
+        var tableRow = $('<tr>');
+        tableRow.addClass('germany-data');
+        var tableDataCountry = $('<td>').text(germanyLast.Country);
+        var tableDataDate = $('<td>').text(moment(germanyLast.Date).format("dddd, MMMM Do YYYY"));
+        var tableDataConfirmed = $('<td>').text(germanyLast.Confirmed);
+        var tableDataDeaths = $('<td>').text(germanyLast.Deaths);
+        var tableDataRecovered = $('<td>').text(germanyLast.Recovered);
+        $('#table-body').append(tableRow);
+        tableRow.append(tableDataCountry, tableDataDate, tableDataConfirmed, tableDataDeaths, tableDataRecovered);
     });
 
     ajax5.then(function (response) {
         var chinaLast = response[response.length - 1];
         console.log(chinaLast);
+        var tableRow = $('<tr>');
+        tableRow.addClass('china-data');
+        var tableDataCountry = $('<td>').text(chinaLast.Country);
+        var tableDataDate = $('<td>').text(moment(chinaLast.Date).format("dddd, MMMM Do YYYY"));
+        var tableDataConfirmed = $('<td>').text(chinaLast.Confirmed);
+        var tableDataDeaths = $('<td>').text(chinaLast.Deaths);
+        var tableDataRecovered = $('<td>').text(chinaLast.Recovered);
+        $('#table-body').append(tableRow);
+        tableRow.append(tableDataCountry, tableDataDate, tableDataConfirmed, tableDataDeaths, tableDataRecovered);
     });
 }
 
