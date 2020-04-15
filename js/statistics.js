@@ -117,6 +117,9 @@ function initStatPage() {
 initStatPage();
 
 // On click "choose your location button"
+$(document).ready(function () {
+    $('.modal').modal();
+});
 // modal pop up with zip code input form"
     // After zip code input after click modal pop up goes away and zip code is passed in a var for google places api
     // google places api will access location and return county depending on input

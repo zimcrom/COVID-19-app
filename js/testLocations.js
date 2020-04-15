@@ -1,3 +1,6 @@
+$('.dropdown-trigger').dropdown();
+
+
 //No functions on initial page
 //get Covid Testing API response
 //Presented with a drop down placeholder 'CHoose a state"

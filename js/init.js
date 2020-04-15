@@ -4,7 +4,12 @@
     $('.sidenav').sidenav();
     $('.parallax').parallax();
 
-    $('#myModal').modal(options)
+    $(document).ready(function () {
+      $('#myBtn').click(function () {
+        $('#myModal').attr('aria-hidden', 'false');
+      });
+    });
+
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
