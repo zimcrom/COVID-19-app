@@ -133,6 +133,8 @@ $('#search-term').keypress(function (event) {
 $('#submit-button').on('click', function () {
     $('.state-header').addClass('hide');
     $('.state-card').addClass('hide');
+    $('#modalTwo').removeClass('hide');
+    $('#modalTwo').addClass('show');
     var state = $('#search-term').val();
     $('#search-term').val('');
 
@@ -145,6 +147,7 @@ $('#submit-button').on('click', function () {
         console.log(response);
         getStateInfo(response)
     });
+
 });
 
 function getStateInfo(response) {
