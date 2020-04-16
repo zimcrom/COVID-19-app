@@ -1,5 +1,21 @@
 $('.dropdown-trigger').dropdown();
 
+var states = ['new-jersey', 'new-york']
+var ajax1 = $.ajax({
+    url: 'https://covid-19-testing.github.io/locations/' + states[0] + '/complete.json',
+    method: 'GET'
+});
+var ajax2 = $.ajax({
+    url: 'https://covid-19-testing.github.io/locations/' + states[1] + '/complete.json',
+    method: 'GET'
+});
+ajax1.then(function (response) {
+    console.log(response)
+});
+ajax2.then(function (response) {
+    console.log(response)
+});
+
 
 //No functions on initial page
 //get Covid Testing API response
