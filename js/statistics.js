@@ -2,6 +2,7 @@
 // in statistics tab once clicked will be taken to statistics html (Completed)
 // Create var for each country we want in the statistics table
 var countries = ['united-states', 'italy', 'spain', 'germany', 'china']
+var date = new Date();
 // On load start this function
 function initStatPage() {
     //Create var for each different ajax call URL. Making the call separately ensures that the computer doesn't get overloaded with a bunch of ajax calls.
@@ -147,7 +148,20 @@ $('#submit-button').on('click', function () {
 });
 
 function getStateInfo(response) {
-
+    $('#current-search').empty();
+    var card = $('<div>').addClass('card');
+    var cardBody = $('<div>').addClass('card-body');
+    var state = $('<h2>').addClass('card-title').text(response.state);
+    var stateDate = $('<h4>').addClass('card-title').text(date.toLocaleDateString('en-US'));
+    var cases = $('<p>').addClass('card-text current-cases').text('Current Cases :' + response.cases);
+    var casesToday = $('<p>').addClass('card-text cases-today').text('Cases Today :' + response.todayCases);
+    var deaths = $('<p>').addClass('card-text current-deaths').text('Current Deaths :' + response.deaths);
+    var deathsToday = $('<p>').addClass('card-text deaths-today').text('Deaths Today :' + response.todayDeaths);
+    var tested = $('<p>').addClass('card-text current-tested').text('Amount of people tested :' + response.tests);
+    state.append(stateDate);
+    cardBody.append(state, cases, casesToday, deaths, deathsToday, tested);
+    card.append(cardBody);
+    $('#current-search').append(card);
 }
 // modal pop up with zip code input form"
     // After zip code input after click modal pop up goes away and zip code is passed in a var for google places api
