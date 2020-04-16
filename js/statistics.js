@@ -120,6 +120,35 @@ initStatPage();
 $(document).ready(function () {
     $('.modal').modal();
 });
+
+$('#search-term').keypress(function (event) {
+
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        $('#submit-button').click();
+    }
+});
+
+$('#submit-button').on('click', function () {
+    $('.state-header').addClass('hide');
+    $('.state-card').addClass('hide');
+    var state = $('#search-term').val();
+    $('#search-term').val('');
+
+    var queryUrl = "https://corona.lmao.ninja/states/" + state;
+
+    $.ajax({
+        url: queryUrl,
+        method: 'GET'
+    }).then(function (response) {
+        console.log(response);
+        getStateInfo(response)
+    });
+});
+
+function getStateInfo(response) {
+
+}
 // modal pop up with zip code input form"
     // After zip code input after click modal pop up goes away and zip code is passed in a var for google places api
     // google places api will access location and return county depending on input

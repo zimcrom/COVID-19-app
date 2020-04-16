@@ -32,8 +32,8 @@
     <div class="container-fluid">
         <!-- Card -->
         <div class="col s12 m3 l3 cardContainer">
-            <h4 class="header">Enter a state below :</h4>
-            <div class="card horizontal">
+            <h4 class="state-header">Enter a state below :</h4>
+            <div class="card state-card horizontal">
                 <div class="card-stacked">
                     <div class="card-content">
                         <p>This can be your state, the state of a friend or family member, or anywhere else in the
@@ -44,25 +44,32 @@
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class="modal-content">
-                            <h4>Modal Header</h4>
-                            <p>A bunch of text</p>
+                            <h4>Enter State</h4>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input placeholder="State..." id="search-term" type="text" class="validate">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                            <button type="button" id="submit-button"
+                                class="modal-close waves-effect waves-green btn-flat">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col s12 m9 l9">
-                <h4 class="header">World Statistics</h4>
-                <div class="card horizontal">
+                <h4 class="world-header">World Statistics</h4>
+                <div class="card world-card horizontal">
                     <div class="card-stacked">
                         <div class="card-content">
                             <p>Placeholder text, we'll build some stuff out here. Graphs, stats, and all types of shit,
                                 yo.</p>
                         </div>
-
-
                         <table class="responsive-table">
                             <thead>
                                 <tr>
@@ -76,13 +83,11 @@
                             <tbody id='table-body'>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 
     <footer class="page-footer brown">
         <div class="container">
