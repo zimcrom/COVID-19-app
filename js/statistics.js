@@ -123,14 +123,30 @@ $(document).ready(function () {
 });
 
 $('#search-term').keypress(function (event) {
+<<<<<<< HEAD
+    // if ('#search-term' == null) {
+    //     console.log('Please check spelling or type in correct state');
+    // }
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        // if ($('#search-term').val('')) {
+
+        //     console.log('no search value');
+        // }
+=======
 
     if (event.keyCode === 13) {
         event.preventDefault();
+>>>>>>> master
         $('#submit-button').click();
     }
 });
 
 $('#submit-button').on('click', function () {
+<<<<<<< HEAD
+    $('#current-search').empty();
+=======
+>>>>>>> master
     $('.state-header').addClass('hide');
     $('.state-card').addClass('hide');
     $('#modalTwo').removeClass('hide');
@@ -151,16 +167,27 @@ $('#submit-button').on('click', function () {
 });
 
 function getStateInfo(response) {
+<<<<<<< HEAD
+=======
     $('#current-search').empty();
+>>>>>>> master
     var card = $('<div>').addClass('card');
     var cardBody = $('<div>').addClass('card-body');
     var state = $('<h2>').addClass('card-title').text(response.state);
     var stateDate = $('<h4>').addClass('card-title').text(date.toLocaleDateString('en-US'));
+<<<<<<< HEAD
+    var cases = $('<p>').addClass('card-text current-cases').text('Current Cases : ' + response.cases);
+    var casesToday = $('<p>').addClass('card-text cases-today').text('Cases Today : ' + response.todayCases);
+    var deaths = $('<p>').addClass('card-text current-deaths').text('Current Deaths : ' + response.deaths);
+    var deathsToday = $('<p>').addClass('card-text deaths-today').text('Deaths Today : ' + response.todayDeaths);
+    var tested = $('<p>').addClass('card-text current-tested').text('Amount of people tested : ' + response.tests);
+=======
     var cases = $('<p>').addClass('card-text current-cases').text('Current Cases :' + response.cases);
     var casesToday = $('<p>').addClass('card-text cases-today').text('Cases Today :' + response.todayCases);
     var deaths = $('<p>').addClass('card-text current-deaths').text('Current Deaths :' + response.deaths);
     var deathsToday = $('<p>').addClass('card-text deaths-today').text('Deaths Today :' + response.todayDeaths);
     var tested = $('<p>').addClass('card-text current-tested').text('Amount of people tested :' + response.tests);
+>>>>>>> master
     state.append(stateDate);
     cardBody.append(state, cases, casesToday, deaths, deathsToday, tested);
     card.append(cardBody);

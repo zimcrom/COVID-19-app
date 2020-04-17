@@ -1,4 +1,15 @@
+<<<<<<< HEAD
+$(document).ready(function () {
+    $('select').formSelect();
+});
+$('#states').on('change', function () {
+    console.log($(this).val());
+})
+var state = $('select').val();
+console.log(state);
+=======
 $('.dropdown-trigger').dropdown();
+>>>>>>> master
 
 var states = ['new-jersey', 'new-york']
 var ajax1 = $.ajax({
