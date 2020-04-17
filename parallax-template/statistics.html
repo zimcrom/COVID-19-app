@@ -39,83 +39,104 @@
                         <p>This can be your location, the location of a friend or family member, or anywhere else in the
                             world!</p>
                     </div>
-                    <div class="card-action">
-                        <!-- Small modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target=".bd-example-modal-sm">Choose your
-                            location</button>
-                        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
-                            aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-sm" role="document">
-                                <div class="modal-content">
-                                    <form class="form-inline">
-                                        <div class="form-group mb-2">
-                                            <label for="staticEmail2" class="sr-only">Enter a zip code</label>
-                                            <input type="text" readonly class="form-control-plaintext" id="staticEmail2"
-                                                value="email@example.com">
+                    <!-- Modal Trigger -->
+                    <button data-target="modal1" class="btn-large modal-trigger">Enter State</button>
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Enter State</h4>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input placeholder="State..." id="search-term" type="text" class="validate">
+                                            <span class="helper-text" data-error="wrong" data-success="right">Helper
+                                                text</span>
                                         </div>
-                                        <div class="form-group mx-sm-3 mb-2">
-                                            <label for="inputPassword2" class="sr-only">90210</label>
-                                            <input type="password" class="form-control" id="inputPassword2"
-                                                placeholder="Password">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary mb-2">See statistics</button>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col s12 m9 l9">
-                <h4 class="header">World Statistics</h4>
-                <div class="card horizontal">
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>Placeholder text, we'll build some stuff out here. Graphs, stats, and all types of shit,
-                                yo.</p>
+                        <div class="modal-footer">
+                            <button type="button" id="submit-button"
+                                class="modal-close waves-effect waves-green btn-flat">Submit</button>
                         </div>
-
-
-                        <table class="responsive-table">
-                            <thead>
-                                <tr>
-                                    <th>Country</th>
-                                    <th>Confirmed</th>
-                                    <th>Recovered</th>
-                                    <th>Deaths</th>
-                                    <th>Population</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>x</td>
-                                    <td>x</td>
-                                    <td>x</td>
-                                    <td>x</td>
-                                    <td>x</td>
-                                </tr>
-                                <tr>
-                                    <td>x</td>
-                                    <td>x</td>
-                                    <td>x</td>
-                                    <td>x</td>
-                                    <td>x</td>
-                                </tr>
-                                <tr>
-                                    <td>x</td>
-                                    <td>x</td>
-                                    <td>x</td>
-                                    <td>x</td>
-                                    <td>x</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Another card where the state info goes -->
+        <div class="col s12 m3 l3 cardContainer">
+            <div id="current-search">
+            </div>
+            <!-- Second button and modal for "another state" -->
+            <div id="modalTwo" class="hide">
+                <button data-target="modal2" class="btn-large modal-trigger">Choose another state</button>
+                <!-- Modal Structure -->
+                <div id="modal2" class="modal">
+                    <div class="modal-content">
+                        <h4>Choose another state</h4>
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input placeholder="State..." id="search-term" type="text" class="validate">
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m9 l9">
+            <h4 class="header">World Statistics</h4>
+            <div class="card horizontal">
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>Placeholder text, we'll build some stuff out here. Graphs, stats, and all types of shit,
+                            yo.</p>
+                    </div>
+
+
+                    <table class="responsive-table">
+                        <thead>
+                            <tr>
+                                <th>Country</th>
+                                <th>Confirmed</th>
+                                <th>Recovered</th>
+                                <th>Deaths</th>
+                                <th>Population</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                            <tr>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                                <td>x</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
 
