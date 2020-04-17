@@ -31,13 +31,14 @@
 
     <div class="container-fluid">
         <!-- Card -->
+        <!-- Separate container for the state search -->
         <div class="col s12 m3 l3 cardContainer">
-            <h4 class="header">Choose a location</h4>
-            <div class="card horizontal">
+            <h4 class="state-header">Enter a state below :</h4>
+            <div class="card state-card horizontal">
                 <div class="card-stacked">
                     <div class="card-content">
-                        <p>This can be your location, the location of a friend or family member, or anywhere else in the
-                            world!</p>
+                        <p>This can be your state, the state of a friend or family member, or anywhere else in the
+                            Country!</p>
                     </div>
                     <!-- Modal Trigger -->
                     <button data-target="modal1" class="btn-large modal-trigger">Enter State</button>
@@ -50,8 +51,11 @@
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <input placeholder="State..." id="search-term" type="text" class="validate">
+<<<<<<< HEAD:parallax-template/statistics.html
                                             <span class="helper-text" data-error="wrong" data-success="right">Helper
                                                 text</span>
+=======
+>>>>>>> master:statistics.html
                                         </div>
                                     </div>
                                 </form>
@@ -69,7 +73,10 @@
         <div class="col s12 m3 l3 cardContainer">
             <div id="current-search">
             </div>
+<<<<<<< HEAD:parallax-template/statistics.html
             <!-- Second button and modal for "another state" -->
+=======
+>>>>>>> master:statistics.html
             <div id="modalTwo" class="hide">
                 <button data-target="modal2" class="btn-large modal-trigger">Choose another state</button>
                 <!-- Modal Structure -->
@@ -83,6 +90,7 @@
                                         <input placeholder="State..." id="search-term" type="text" class="validate">
                                     </div>
                                 </div>
+<<<<<<< HEAD:parallax-template/statistics.html
                         </div>
                     </div>
                 </div>
@@ -133,12 +141,47 @@
                         </tbody>
                     </table>
 
+=======
+                            </form>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="submit-button"
+                            class="modal-close waves-effect waves-green btn-flat">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Separate container for world statistics -->
+        <div class="col s12 m3 l3 cardContainer">
+            <div class="col s12 m9 l9">
+                <h4 class="world-header">World Statistics</h4>
+                <div class="card world-card horizontal">
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Placeholder text, we'll build some stuff out here. Graphs, stats, and all types of shit,
+                                yo.</p>
+                        </div>
+                        <table class="responsive-table">
+                            <thead>
+                                <tr>
+                                    <th>Country</th>
+                                    <th>Date</th>
+                                    <th>Confirmed</th>
+                                    <th>Deaths</th>
+                                    <th>Recovered</th>
+                                </tr>
+                            </thead>
+                            <tbody id='table-body'>
+                            </tbody>
+                        </table>
+                    </div>
+>>>>>>> master:statistics.html
                 </div>
             </div>
         </div>
     </div>
     </div>
-
 
     <footer class="page-footer brown">
         <div class="container">
@@ -180,9 +223,11 @@
 
 
     <!--  Scripts-->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script src="js/statistics.js"></script>
 </body>
 
 </html>
