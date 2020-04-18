@@ -1,13 +1,49 @@
 $(document).ready(function () {
     $('select').formSelect();
 });
+//Create an open array that our values can be pushed into later.
+var states = [];
+//Call on states ID inside of select element and every time theres a change console.log the value
 $('#states').on('change', function () {
     console.log($(this).val());
-})
-var state = $('select').val();
-console.log(state);
+// Go into the states array and push the value into it for every change
+    states.push($(this).val());
+    $('#testing-location').empty()
+//console.log this to see the new array every time for states
+    console.log(states);
 
-var states = ['new-jersey', 'new-york']
+    var ajax1 = $.ajax({
+        url: 'https://covid-19-testing.github.io/locations/' + states[states.length - 1] + '/complete.json',
+        method: 'GET'
+    });
+    ajax1.then(function (response) {
+        console.log(response)
+        for (i = 0; i < response.length; i++) {
+            var address = response[i].physical_address[0].address_1;
+            var city = response[i].physical_address[0].city;
+            var province = response[i].physical_address[0].state_province;
+            var postal = response[i].physical_address[0].postal_code;
+            var card = $('<div>').addClass('card');
+            var cardBody = $('<div>').addClass('card-body');
+            var testName = $('<h3>').addClass('card-name').text(response[i].name);
+            var description = $('<p>').addClass('card-title test-description').text('Description : ');
+            var testDescription = $('<p>').addClass('card-text test-description').text(response[i].description);
+            var testAddressTag = $('<p>').addClass('card-title test-address-tag').text('Address : ')
+            var testAddress = $('<p>').addClass('card-text test-address').text(address);
+            var testCity = $('<p>').addClass('card-text test-city').text(city);
+            var testProvince = $('<p>').addClass('card-text test-province').text(province);
+            var testPostal = $('<p>').addClass('card-text test-postal').text(postal);
+            var phone = $('<p>').addClass('card-title test-phone').text('Phone Number : ');
+            var testPhone = $('<p>').addClass('card-text test-phone').text(response[i].phones[0].number);
+            cardBody.append(testName,description, testDescription, testAddressTag, testAddress, testCity, testProvince, testPostal, phone, testPhone);
+            card.append(cardBody);
+            $('#testing-location').append(card);
+        };
+    });
+})
+
+
+
 var ajax1 = $.ajax({
     url: 'https://covid-19-testing.github.io/locations/' + states[0] + '/complete.json',
     method: 'GET'
@@ -44,4 +80,3 @@ ajax2.then(function (response) {
         //create a var for response.length = results[i]
         //in function we will append results[i].name to card title attribute 
         //Then Append results[i].description and results[i].physicalAddress.splice(0,2) and results[i].phones.number to card body
-
