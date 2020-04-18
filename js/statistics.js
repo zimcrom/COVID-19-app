@@ -145,7 +145,7 @@ $('#submit-button').on('click', function () {
     var state = $('#search-term').val();
     $('#search-term').val('');
 
-    var queryUrl = "https://corona.lmao.ninja/states/" + state;
+    var queryUrl = "https://corona.lmao.ninja/v2/states/" + state;
 
     $.ajax({
         url: queryUrl,
