@@ -36,24 +36,33 @@ function initStatPage() {
     ajax1.then(function (response) {
         //give that response a variable so we can access that later and easier
         var usaLast = response[response.length - 1];
+
         //console log last index from the response
         // console.log(usaLast);
         // create var that will create a table row
         var tableRow = $('<tr>');
+
         // give table row a class
         tableRow.addClass('usa-data');
+
         // create var that will put a <td> with the text of Country Name
         var tableDataCountry = $('<td>').text(usaLast.Country);
+
         // create var that will put a <td> with the text of Date formatted to moment js
         var tableDataDate = $('<td>').text(moment(usaLast.Date).format("dddd, MMMM Do YYYY"));
+
         // create var that will put a <td> with the text of confirmed cases
         var tableDataConfirmed = $('<td>').text(usaLast.Confirmed);
+
         // create var that will put a <td> with the text of deaths
         var tableDataDeaths = $('<td>').text(usaLast.Deaths);
+
         // create var that will put a <td> with the text of recovered
         var tableDataRecovered = $('<td>').text(usaLast.Recovered);
+
         // inside of id table-body append the var tableRow
         $('#table-body').append(tableRow);
+
         // inside of tableRow create all variables
         tableRow.append(tableDataCountry, tableDataDate, tableDataConfirmed, tableDataDeaths, tableDataRecovered);
     });
@@ -122,20 +131,6 @@ $(document).ready(function () {
     $('.modal').modal();
 });
 
-// $('#search-term').keypress(function (event) {
-//     // if ('#search-term' == null) {
-//     //     console.log('Please check spelling or type in correct state');
-//     // }
-//     if (event.keyCode === 13) {
-//         event.preventDefault();
-//         // if ($('#search-term').val('')) {
-
-//         //     console.log('no search value');
-//         // }
-//         $('#submit-button').click();
-//     }
-// });
-
 $('#submit-button-1').on('click', function () {
     console.log('hit');
     $('#current-search').empty();
@@ -144,8 +139,6 @@ $('#submit-button-1').on('click', function () {
     $('#modalTwo').removeClass('hide');
     $('#modalTwo').addClass('show');
     var state = $('#search-term-1').val();
-    // $('#search-term').val('');
-
     var queryUrl = "https://corona.lmao.ninja/v2/states/" + state;
 
     $.ajax({
@@ -160,15 +153,8 @@ $('#submit-button-1').on('click', function () {
 $('#submit-button').on('click', function () {
     console.log('hit');
     $('#current-search').empty();
-    // $('.state-header').addClass('hide');
-    // $('.state-card').addClass('hide');
-    // $('#modalTwo').removeClass('hide');
-    // $('#modalTwo').addClass('show');
     var state = $('#search-term').val();
-    // $('#search-term').val('');
-
     var queryUrl = "https://corona.lmao.ninja/v2/states/" + state;
-
     $.ajax({
         url: queryUrl,
         method: 'GET'
