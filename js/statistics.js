@@ -37,7 +37,7 @@ function initStatPage() {
         //give that response a variable so we can access that later and easier
         var usaLast = response[response.length - 1];
         //console log last index from the response
-        console.log(usaLast);
+        // console.log(usaLast);
         // create var that will create a table row
         var tableRow = $('<tr>');
         // give table row a class
@@ -60,7 +60,7 @@ function initStatPage() {
 
     ajax2.then(function (response) {
         var italyLast = response[response.length - 1];
-        console.log(italyLast);
+        // console.log(italyLast);
         var tableRow = $('<tr>');
         tableRow.addClass('italy-data');
         var tableDataCountry = $('<td>').text(italyLast.Country);
@@ -74,7 +74,7 @@ function initStatPage() {
 
     ajax3.then(function (response) {
         var spainLast = response[response.length - 1];
-        console.log(spainLast);
+        // console.log(spainLast);
         var tableRow = $('<tr>');
         tableRow.addClass('spain-data');
         var tableDataCountry = $('<td>').text(spainLast.Country);
@@ -88,7 +88,7 @@ function initStatPage() {
 
     ajax4.then(function (response) {
         var germanyLast = response[response.length - 1];
-        console.log(germanyLast);
+        // console.log(germanyLast);
         var tableRow = $('<tr>');
         tableRow.addClass('germany-data');
         var tableDataCountry = $('<td>').text(germanyLast.Country);
@@ -102,7 +102,7 @@ function initStatPage() {
 
     ajax5.then(function (response) {
         var chinaLast = response[response.length - 1];
-        console.log(chinaLast);
+        // console.log(chinaLast);
         var tableRow = $('<tr>');
         tableRow.addClass('china-data');
         var tableDataCountry = $('<td>').text(chinaLast.Country);
@@ -122,28 +122,29 @@ $(document).ready(function () {
     $('.modal').modal();
 });
 
-$('#search-term').keypress(function (event) {
-    // if ('#search-term' == null) {
-    //     console.log('Please check spelling or type in correct state');
-    // }
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        // if ($('#search-term').val('')) {
+// $('#search-term').keypress(function (event) {
+//     // if ('#search-term' == null) {
+//     //     console.log('Please check spelling or type in correct state');
+//     // }
+//     if (event.keyCode === 13) {
+//         event.preventDefault();
+//         // if ($('#search-term').val('')) {
 
-        //     console.log('no search value');
-        // }
-        $('#submit-button').click();
-    }
-});
+//         //     console.log('no search value');
+//         // }
+//         $('#submit-button').click();
+//     }
+// });
 
-$('#submit-button').on('click', function () {
+$('#submit-button-1').on('click', function () {
+    console.log('hit');
     $('#current-search').empty();
     $('.state-header').addClass('hide');
     $('.state-card').addClass('hide');
     $('#modalTwo').removeClass('hide');
     $('#modalTwo').addClass('show');
-    var state = $('#search-term').val();
-    $('#search-term').val('');
+    var state = $('#search-term-1').val();
+    // $('#search-term').val('');
 
     var queryUrl = "https://corona.lmao.ninja/v2/states/" + state;
 
@@ -154,7 +155,27 @@ $('#submit-button').on('click', function () {
         console.log(response);
         getStateInfo(response)
     });
+});
 
+$('#submit-button').on('click', function () {
+    console.log('hit');
+    $('#current-search').empty();
+    // $('.state-header').addClass('hide');
+    // $('.state-card').addClass('hide');
+    // $('#modalTwo').removeClass('hide');
+    // $('#modalTwo').addClass('show');
+    var state = $('#search-term').val();
+    // $('#search-term').val('');
+
+    var queryUrl = "https://corona.lmao.ninja/v2/states/" + state;
+
+    $.ajax({
+        url: queryUrl,
+        method: 'GET'
+    }).then(function (response) {
+        console.log(response);
+        getStateInfo(response)
+    });
 });
 
 function getStateInfo(response) {
