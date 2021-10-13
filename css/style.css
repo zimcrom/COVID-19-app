@@ -11,6 +11,19 @@ nav .brand-logo {
   color: #444;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  flex: 0 0 50px;
+  margin-top: auto;
+  text-align: center;
+}
+
+
 p {
   line-height: 2rem;
 }
@@ -50,10 +63,6 @@ p {
 }
 .icon-block .material-icons {
   font-size: inherit;
-}
-
-footer.page-footer {
-  margin: 0;
 }
 
 .cardContainer {
