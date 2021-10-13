@@ -4,12 +4,12 @@
 ---
 
 ## Index
-- [Elevator Pitch](#Elevator)
+- [Elevator Pitch](#elevator-pitch)
 - [Concept](#Concept)
 - [Process](#Process)
-- [Challenges vs. Sucesses](Challenges)
-- [Demo Gifs/Photos](#Demo)
-- [Future Development](#Future)
+- [Challenges vs. Sucesses](#challenges-vs-successes)
+- [Demo Gifs/Photos](#demo-gifsphotos)
+- [Future Development](#future-development)
 - [Links](#Links)
 ## Elevator Pitch
 We’ve aimed to relieve stress when researching COVID-19 by offering a simple, accurate site where people can check the latest updates without being bombarded with fake news, the wrong kind of information, and stressful links. This is simply an easy to navigate site where users can access accurate statistics and resources without any unwanted extra content.
