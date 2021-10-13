@@ -3,7 +3,15 @@
 
 ---
 
-## Elevator Pitch
+## Index
+- [Elevator Pitch](#Elevator-Pitch)
+- [Concept](#Concept)
+- [Process](#Process)
+- [Challenges vs. Sucesses](Challenges-vs-Successes)
+- [Demo Gifs/Photos](#Demo-Gifs/Photos)
+- [Future Development](#Future-Development)
+- [Links](#Links)
+## Elevator Pitch {#Elevator-Pitch}
 We’ve aimed to relieve stress when researching COVID-19 by offering a simple, accurate site where people can check the latest updates without being bombarded with fake news, the wrong kind of information, and stressful links. This is simply an easy to navigate site where users can access accurate statistics and resources without any unwanted extra content.
 
 ## Concept
@@ -19,7 +27,7 @@ User Story:
 - We used 3 separate API’s to populate the data for our site, and Postman to analyze response
 - Morgan primarily built HTML/CSS, Reiner primarily built Javascript, and Andrew assisted with both
 
-## Challenges vs. Successes
+## Challenges vs. Successes {#Challenges-vs-Successes}
 | Challenges | Successes |
 | ----------- | ----------- |
 | Learning how to use Materialize | Correctly implementing Materialize |
@@ -27,7 +35,7 @@ User Story:
 | Appending all of the information onto the table and cards | Creating an idea right off the bat that was narrow enough to specify intent, but broad enough to change if needed |
 | Learning how to use different branches in GitHub | Working as a team to make consistent progress and provide constructive criticism to each other |
 
-## Demo Gifs/Photos
+## Demo Gifs/Photos {#Demo-Gifs/Photos}
 Home Page
 ![Gif showing home page functionality](./images/HomeGif.gif)
 Mobile Responsive Nav Bar
@@ -38,7 +46,7 @@ Test Locations Page
 ![Gif showing test locations page in use](./images/TestLocationsGif.gif)
 Resources
 ![Screenshot of resources page, with links for each state](./images/resources.PNG)
-## Future Development
+## Future Development {#Future-Development}
 - We could definitely expand and refine this project easily in the future
 - We can change and add new APIs as they are created, add new sources, and add new features while maintaining the calming simplicity that the site offers
 
